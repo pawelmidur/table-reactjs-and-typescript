@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { AppWrapper, Container } from "./assets/styles";
+import { Table } from "./components";
+
+import { DATA } from "./assets/data";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppWrapper>
+      <Container>
+        <Table
+          data={DATA}
+          columns={[
+            { name: "ID", field: "id", width: 80 },
+            { name: "Imię", field: "firstName", width: 350 },
+            { name: "Nazwisko", field: "lastName", width: 350 },
+            { name: "Płeć", field: "gender", width: 150 },
+            { name: "Kraj", field: "country", width: 150 },
+            { name: "E-mail", field: "email", width: 250 },
+          ]}
+        />
+      </Container>
+    </AppWrapper>
   );
 }
 
